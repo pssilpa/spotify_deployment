@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Tracks Popularity Prediction</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Spotify Tracks Popularity Prediction</h1>
+    <form action="/predict" method="post">
+
+        <label for="artists">Artist :</label>
+        <input type="text" id="artists" name="artists" required><br>
+
+        <label for="album_name">Album Name:</label>
+        <input type="text" id="album_name" name="album_name" required><br>
+
+        <label for="track_name">Track name:</label>
+        <input type="text" id="track_name" name="track_name" required><br>
+
+        <label for="duration_ms">Duration (ms):</label>
+        <input type="text" id="duration_ms" name="duration_ms" required>
+
+        <label for="danceability">Danceability:</label>
+        <input type="text" id="danceability" name="danceability" required><br>
+
+        <label for="energy">Energy:</label>
+        <input type="text" id="energy" name="energy" required><br>
+
+        <label for="key">key:</label>
+        <input type="text" id="key" name="key" required><br>
+
+        <label for="speechiness">Speechiness:</label>
+        <input type="text" id="speechiness" name="speechiness" required><br>
+
+        <label for="instrumentalness">Instrumentalness:</label>
+        <input type="text" id="instrumentalness" name="instrumentalness" required><br>
+
+        <label for="liveness">Liveness:</label>
+        <input type="text" id="liveness" name="liveness" required><br>
+
+        <label for="valence">Valence:</label>
+        <input type="text" id="valence" name="valence" required><br>
+
+        <label for="track_genre">Track Genre:</label>
+        <input type="text" id="track_genre" name="track_genre" required><br>
+
+        <button type="submit">Predict Popularity</button>
+
+    </form>
+{% if prediction is defined %}
+<p>The predicted popularity is: {{ prediction }}</p>
+{% endif %}
+</body>
+</html>
