@@ -2,6 +2,7 @@ from flask import Flask,render_template,request
 import pickle
 import pandas as pd
 
+
 app = Flask(__name__)
 
 with open('model_data.pkl', 'rb') as model_file:
