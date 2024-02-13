@@ -31,6 +31,7 @@ def predict():
         track_genre = request.form['track_genre']
 
         input_data = [[artists, album_name, track_name, duration_ms, danceability,
+                       
         energy, key, speechiness, instrumentalness, liveness, valence, track_genre]]
 
         columns = ['artists', 'album_name', 'track_name', 'duration_ms', 'danceability',
