@@ -4,6 +4,7 @@ import pandas as pd
 
 app = Flask(__name__)
 
+
 with open('model_data.pkl', 'rb') as model_file:
     model_data = pickle.load(model_file)
 
